@@ -25,6 +25,8 @@ public class SysUsercontroller {
     public String getOne(){
         return "one";
     }
+
+
     @RequestMapping("two")
     public String getTwo(){
         return "two";
@@ -39,6 +41,17 @@ public class SysUsercontroller {
     }
 
 
+//    @RequestMapping("index")
+//    public String index( ModelMap map){
+//        map.addAttribute("msg2","你已经登录成功");
+//        map.addAttribute("msg1","现在是主界面");
+//
+//
+//
+//        return "index";
+//    }
+
+
     @RequestMapping("toLogin")
     public String findUser(SysUser sysUser, Model model) {
 
@@ -51,7 +64,7 @@ public class SysUsercontroller {
             subject.login( usertoken );
             System.out.println( "成功" );
             model.addAttribute( "msg","你登录成功" );
-            return "redirect:two";
+            return "redirect:index";
 
 
         }catch (UnknownAccountException e) {

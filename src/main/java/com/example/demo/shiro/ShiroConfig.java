@@ -20,9 +20,11 @@ public ShiroFilterFactoryBean getShiroFilterFactoryBean(@Qualifier("defaultWebSe
     Map<String,String> fMap=new HashMap<String, String>(  );
     fMap.put( "/one","authc" );
     fMap.put( "/two","authc" );
+    fMap.put( "/index","authc" );
 
     fMap.put( "/one","perms[管理员]" );
     fMap.put( "/two","perms[管理员]" );
+//    fMap.put( "/index/*","perms[管理员]" );
 
     shiroFilterFactoryBean.setLoginUrl( "/login" );
 

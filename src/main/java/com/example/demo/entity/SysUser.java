@@ -1,10 +1,13 @@
 package com.example.demo.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "sys_user")
-public class SysUser {
+public class SysUser implements Serializable {
+
+    private static final long serialVersionUID=2767633062208052156L;
     /**
      * 用户id
      */
@@ -477,4 +480,13 @@ public class SysUser {
     public void setRemark(String remark) {
         this.remark = remark;
     }
+
+    public boolean isAdmin(){
+
+        return isAdmin(this.userId);
+    }
+    public static boolean isAdmin(Long userId){
+        return userId !=null&& 2767633062208052156L==userId;
+    }
+
 }

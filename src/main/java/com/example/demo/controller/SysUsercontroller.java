@@ -64,6 +64,7 @@ public class SysUsercontroller {
             subject.login( usertoken );
             System.out.println( "成功" );
             model.addAttribute( "msg","你登录成功" );
+
             return "redirect:index";
 
 

@@ -23,13 +23,19 @@ public class indexController {
         SysUser user=null;
 
         Object obj = getSubject().getPrincipal();
+        System.out.println("shuchu要复制的内容"+ obj.toString() );
 
         user =new SysUser();
-        BeanUtils.copyProperties(user,obj);
+        /**
+         * 这里beanutils.copyProperties(a,b)是a复制给b
+         * a 是源头，b是被复制放。
+         * */
+        BeanUtils.copyProperties(obj,user);
+        System.out.println("看看复制进入没有"+ user.toString() );
         SysUser user1=user;
 
 //        SysUser user= (SysUser) SecurityUtils.getPrincipal();
-        System.out.println("user"+user.getLoginName());
+        System.out.println("  user+++111   "+user1.toString());
         map.addAttribute("msg2","你已经登录成功");
         map.addAttribute("msg1","现在是主界面");
 

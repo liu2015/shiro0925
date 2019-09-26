@@ -38,8 +38,12 @@ public class UserRealm extends AuthorizingRealm {
         sysUser.setLoginName( user.getUsername() );
         sysUser.setPassword( String.copyValueOf( user.getPassword() ) );
 
+//        System.out.println( "显示认证的内容··········"+sysUser.getLoginName()+sysUser.getPassword() );
+
         SysUser newUser=sysUserService.findUser( sysUser );
 
+        System.out.println( "显示认证的内容··········"+newUser.getLoginName()+newUser.getPassword() );
+        System.out.println( "这个是看看认证时候存储的是什么"+newUser.toString() );
         if (newUser==null)
         {
             return null;

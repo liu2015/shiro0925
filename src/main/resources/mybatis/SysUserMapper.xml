@@ -26,7 +26,7 @@
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
     <result column="remark" jdbcType="VARCHAR" property="remark" />
   </resultMap>
-  <select id="findUser" resultType="com.example.demo.entity.SysUser">
+  <select id="findUser" resultMap="BaseResultMap" resultType="com.example.demo.entity.SysUser">
     select * from sys_user where login_name=#{loginName} and password=#{password}
   </select>
 </mapper>

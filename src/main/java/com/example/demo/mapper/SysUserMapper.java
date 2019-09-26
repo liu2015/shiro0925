@@ -5,6 +5,5 @@ import mybatis.MyMapper;
 
 public interface SysUserMapper extends MyMapper<SysUser> {
 
-    SysUser findUser(SysUser sysUser);
-
+    SysUser findUser(SysUser user);
 }

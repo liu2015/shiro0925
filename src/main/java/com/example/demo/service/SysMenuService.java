@@ -35,6 +35,7 @@ public class SysMenuService {
            menus=sysMenuMapper.selectMenusByUserId( sysUser.getUserId() );
        }
 
+
 /**
  *  返回一个集合,权限集合 这个需要写一个
  *  权限处理类,是用递归列表,还有返回一个结果

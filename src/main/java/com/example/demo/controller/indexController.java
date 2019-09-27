@@ -1,8 +1,11 @@
 package com.example.demo.controller;
 
+import com.example.demo.entity.SysMenu;
 import com.example.demo.entity.SysUser;
+import com.example.demo.service.SysMenuService;
 import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,7 +17,8 @@ import static org.apache.shiro.SecurityUtils.getSubject;
 
 @Controller
 public class indexController {
-
+@Autowired
+private SysMenuService sysMenuService;
 
 
     @RequestMapping("/index")
@@ -39,9 +43,23 @@ public class indexController {
         map.addAttribute("msg2","你已经登录成功");
         map.addAttribute("msg1","现在是主界面");
 
+        List<SysMenu> menus=sysMenuService.selectMenunormalall1(user1);
+
+        map.put("meuns",menus);
+        map.put("user",user1);
+//        map.put("copyrightyear")
+
 
         return "index";
 
     }
+
+    @RequestMapping("/system/main")
+    public String main(){
+
+
+        return "main";
+    }
+
 
 }

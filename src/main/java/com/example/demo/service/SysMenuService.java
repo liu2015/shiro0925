@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import com.example.demo.Utils.TreeUtils;
 import com.example.demo.entity.SysMenu;
 import com.example.demo.entity.SysUser;
 import com.example.demo.mapper.SysMenuMapper;
@@ -42,7 +43,7 @@ public class SysMenuService {
  *
  */
 
-        return
+        return TreeUtils.getChildPerms(menus,0);
     }
 
 

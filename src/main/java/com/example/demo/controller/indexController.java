@@ -47,10 +47,15 @@ private SysMenuService sysMenuService;
 
         map.put("meuns",menus);
         map.put("user",user1);
+
+        System.out.println( menus.toString() );
+        map.addAttribute("msg3",sysMenuService.selectMenunormalall1(user1));
+        map.addAttribute("msg4",sysMenuService.selectMenunormalall1(user1));
+
 //        map.put("copyrightyear")
 
 
-        return "index";
+        return "index1";
 
     }
 

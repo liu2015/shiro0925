@@ -29,10 +29,14 @@ public class SysMenuService {
      */
     public List<SysMenu> selectMenunormalall1(SysUser sysUser) {
        List<SysMenu> menus=new LinkedList<SysMenu>(  );
-       if (sysUser.isAdmin()){
+       if (sysUser.getUserId()!=null){
+           System.out.println( "这是一个用户id  "+sysUser.getUserId() );
+//           menus=sysMenuMapper.selectMenunormalall1();
            menus=sysMenuMapper.selectMenunormalall1();
+
        }
        else{
+           System.out.println( "这是一个用户id"+sysUser.getUserId() );
            menus=sysMenuMapper.selectMenusByUserId( sysUser.getUserId() );
        }
 

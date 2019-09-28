@@ -374,4 +374,26 @@ public class SysMenu {
     public void setRemark(String remark) {
         this.remark = remark;
     }
+
+    @Override
+    public String toString() {
+        return "SysMenu{" +
+                "menuId=" + menuId +
+                ", menuName='" + menuName + '\'' +
+                ", parentId=" + parentId +
+                ", orderNum=" + orderNum +
+                ", url='" + url + '\'' +
+                ", target='" + target + '\'' +
+                ", menuType='" + menuType + '\'' +
+                ", visible='" + visible + '\'' +
+                ", perms='" + perms + '\'' +
+                ", icon='" + icon + '\'' +
+                ", children=" + children +
+                ", createBy='" + createBy + '\'' +
+                ", createTime=" + createTime +
+                ", updateBy='" + updateBy + '\'' +
+                ", updateTime=" + updateTime +
+                ", remark='" + remark + '\'' +
+                '}';
+    }
 }

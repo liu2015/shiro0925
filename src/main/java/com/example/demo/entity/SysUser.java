@@ -486,7 +486,33 @@ public class SysUser implements Serializable {
         return isAdmin(this.userId);
     }
     public static boolean isAdmin(Long userId){
-        return userId !=null&& 2767633062208052156L==userId;
+        return userId !=null;
     }
 
+
+    @Override
+    public String toString() {
+        return "SysUser{" +
+                "userId=" + userId +
+                ", deptId=" + deptId +
+                ", loginName='" + loginName + '\'' +
+                ", userName='" + userName + '\'' +
+                ", userType='" + userType + '\'' +
+                ", email='" + email + '\'' +
+                ", phonenumber='" + phonenumber + '\'' +
+                ", sex='" + sex + '\'' +
+                ", avatar='" + avatar + '\'' +
+                ", password='" + password + '\'' +
+                ", salt='" + salt + '\'' +
+                ", status='" + status + '\'' +
+                ", delFlag='" + delFlag + '\'' +
+                ", loginIp='" + loginIp + '\'' +
+                ", loginDate=" + loginDate +
+                ", createBy='" + createBy + '\'' +
+                ", createTime=" + createTime +
+                ", updateBy='" + updateBy + '\'' +
+                ", updateTime=" + updateTime +
+                ", remark='" + remark + '\'' +
+                '}';
+    }
 }

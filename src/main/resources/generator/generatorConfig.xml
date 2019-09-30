@@ -52,7 +52,7 @@
 
         <!--        注意这里的配置,将决定生成指定表的数据库  <table> catolog 指定数据库, 而jdbcurl并没有权利确定-->
         <!--         配置需要指定生成的数据库和表，% 代表所有表-->
-        <table catalog="testry" tableName="%">
+        <table catalog="testry" tableName="sys_user_role">
             <!--            catalog="mybatistest"-->
             <!-- 默认为false，如果设置为true，在生成的SQL中，table名字不会加上catalog或schema； true 不会生成@Table(name = "mybatistest..user") -->
             <property name="ignoreQualifiersAtRuntime" value="true"/>

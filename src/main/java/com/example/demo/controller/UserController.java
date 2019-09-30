@@ -9,12 +9,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import com.example.demo.web.BaseController;
 
-import static com.github.pagehelper.page.PageMethod.startPage;
+import java.util.List;
+
 
 @Controller
 @RequestMapping("/system/user")
-public class UserController {
+public class UserController extends BaseController {
 
     private  String prefix="system/user";
 
@@ -32,9 +34,11 @@ public class UserController {
     @PostMapping("/list")
     public TableDataInfo list(SysUser user)
     {
-        startPage();
 
-        return
+        startPage();
+        List<SysUser> list=sysUserService.selectUserList( user );
+        return getDataTable();
+
 
     }
 

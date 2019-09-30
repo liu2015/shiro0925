@@ -1,17 +1,15 @@
 package com.example.demo.web;
 
-import com.example.demo.Utils.DateUtils;
-import com.example.demo.Utils.PageDomain;
-import com.example.demo.Utils.SqlUtil;
-import com.example.demo.Utils.StringUtils;
+import com.example.demo.Utils.*;
 import com.github.pagehelper.PageHelper;
-import org.omg.CORBA.PUBLIC_MEMBER;
+import com.github.pagehelper.PageInfo;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 
 
 import java.beans.PropertyEditorSupport;
 import java.util.Date;
+import java.util.List;
 
 /**
  * 通用的数据处理
@@ -54,6 +52,37 @@ protected  void startPage(){
          PageHelper.startPage( pageNum,pageSize,orderBy );
 
      }
+}
+
+    /**
+     * @Method getDataTable
+     * @Author ZHY
+     * @Version  1.0
+     * @Description
+     * @param list
+     * @Return com.example.demo.Utils.TableDataInfo
+     * @Exception
+     * @Date 2019/9/30 22:55
+     */
+protected TableDataInfo getDataTable(List<?> list){
+
+    /**
+     * @Method getDataTable
+     * @Author ZHY
+     * @Version  1.0
+     * @Description
+     * @param list
+     * @Return com.example.demo.Utils.TableDataInfo
+     * @Exception
+     * @Date 2019/9/30 22:55
+     */
+    TableDataInfo rspData =new TableDataInfo(  );
+    rspData.setCode( 0 );
+    rspData.setRows( list );
+    rspData.setTotal( new PageInfo(list  ).getTotal() );
+
+
+    return rspData;
 }
 
 
